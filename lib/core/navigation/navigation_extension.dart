@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 extension NavigationExtension on BuildContext {
-  void goTo(String routeName) => GoRouter.of(this).go(routeName);
+  void goTo(String routeName) {
+    Navigator.of(this).pushNamedAndRemoveUntil(routeName, (route) => false);
+  }
 
-  void pushTo(String routeName) => GoRouter.of(this).push(routeName);
+  void pushTo(String routeName) {
+    Navigator.of(this).pushNamed(routeName);
+  }
 
-  void back() => GoRouter.of(this).pop();
+  void pushReplacement(String routeName) {
+    Navigator.of(this).pushReplacementNamed(routeName);
+  }
+
+  void back() {
+    Navigator.of(this).pop();
+  }
 }

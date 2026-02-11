@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import '../constants/app_colors.dart';
 import '../constants/app_fonts.dart';
 
 class AppText extends StatelessWidget {
   final String text;
   final double size;
-  final FontWeight weight;
+  final FontWeight? weight;
   final Color color;
 
   const AppText(
     this.text, {
     super.key,
-    this.size = 14,
-    this.weight = FontWeight.normal,
-    this.color = AppColors.textMain,
+    required this.size,
+    this.weight,
+    required this.color,
   });
 
   @override
@@ -22,7 +21,7 @@ class AppText extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: size,
-        fontWeight: weight,
+        fontWeight: weight ?? FontWeight.normal,
         color: color,
         fontFamily: AppFonts.primary,
       ),
