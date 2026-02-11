@@ -1,16 +1,20 @@
-# bullion_market
+# Bullion Market
 
-A new Flutter project.
+Bullion Market is a Flutter application for tracking real-time gold and silver prices.
 
-## Getting Started
+The project follows MVVM architecture and uses Bloc for state management and Dio for networking.
+It is built with a clean and scalable structure suitable for financial and market-based applications.
 
-This project is a starting point for a Flutter application.
+## Features
+- Live gold price tracking
+- Live silver price tracking
+- Clean MVVM architecture
+- Bloc state management
+- Dio networking layer
+- Scalable project structure
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+- Flutter
+- Dart
+- Bloc
+- Dio
