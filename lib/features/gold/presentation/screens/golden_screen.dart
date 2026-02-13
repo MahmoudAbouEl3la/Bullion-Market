@@ -36,7 +36,7 @@ class GoldenScreen extends StatelessWidget {
           } else if (state is ErrorGoldState) {
             return Center(
               child: AppText(
-                state.message,
+                state.errorMessage,
                 style: AppTextStyles.font18GoldWeight600,
               ),
             );

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
 class AppLoadingWidget extends StatelessWidget {
-  const AppLoadingWidget({super.key});
+  final Color? color;
+  const AppLoadingWidget({super.key, this.color});
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: CircularProgressIndicator(
-        color: AppColors.goldPrimary,
+        color: color ?? AppColors.goldPrimary,
         strokeWidth: 2,
         value: 2,
         backgroundColor: AppColors.appBackground,

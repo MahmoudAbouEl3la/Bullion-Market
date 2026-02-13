@@ -12,6 +12,6 @@ class SuccessGoldState extends GoldState {
 }
 
 class ErrorGoldState extends GoldState {
-  final String message;
-  ErrorGoldState(this.message);
+  final String errorMessage;
+  ErrorGoldState(this.errorMessage);
 }

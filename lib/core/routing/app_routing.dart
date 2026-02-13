@@ -2,6 +2,8 @@ import 'package:bullion_market/core/di/service_locator.dart';
 import 'package:bullion_market/features/gold/data/repo/gold_repo.dart';
 import 'package:bullion_market/features/gold/presentation/cubit/gold_cubit.dart';
 import 'package:bullion_market/features/gold/presentation/screens/golden_screen.dart';
+import 'package:bullion_market/features/silver/data/repo/silver_repo.dart';
+import 'package:bullion_market/features/silver/presentation/cubit/silver_cubit.dart';
 import 'package:bullion_market/features/silver/presentation/screens/silver_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +25,13 @@ class AppRouter {
           ),
         );
       case Routes.silverScreen:
-        return MaterialPageRoute(builder: (_) => const SilverScreen());
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) =>
+                SilverCubit(silverRepo: sl<SilverRepo>())..getSilver(),
+            child: SilverScreen(),
+          ),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
