@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 
-class LoadingWidget extends StatelessWidget {
-  const LoadingWidget({super.key});
+class AppLoadingWidget extends StatelessWidget {
+  const AppLoadingWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class LoadingWidget extends StatelessWidget {
         color: AppColors.goldPrimary,
         strokeWidth: 2,
         value: 2,
-        backgroundColor: AppColors.silverSecondary,
+        backgroundColor: AppColors.appBackground,
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'api_endpoints.dart';
+import 'api_constants.dart';
 
 class ApiService {
   late final Dio _dio;
@@ -7,20 +7,18 @@ class ApiService {
   ApiService() {
     _dio = Dio(
       BaseOptions(
-        baseUrl: ApiEndpoints.baseUrl + ApiEndpoints.endpoint,
+        baseUrl: ApiConstants.baseUrl,
+        receiveDataWhenStatusError: true,
         connectTimeout: const Duration(seconds: 15),
         receiveTimeout: const Duration(seconds: 15),
-        headers: {'Accept': 'application/json'},
+        headers: {'Accept': 'application/json', 'User-Agent': 'Mozilla/5.0'},
       ),
     );
   }
 
-  Future<Response> get(
-    String endpoint, {
-    Map<String, dynamic>? query,
-    String? token,
-  }) {
-    return _dio.get(endpoint, queryParameters: query);
+  Future<dynamic> get(String endpoint, {Map<String, dynamic>? query}) async {
+    final response = await _dio.get(endpoint, queryParameters: query);
+    return response.data;
   }
 
   Future<Response> post(

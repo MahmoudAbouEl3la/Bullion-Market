@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_sizes.dart';
 
-class AppButton extends StatelessWidget {
+class AppTextButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final Color? color;
   final double? radius;
   final Color? textColor;
 
-  const AppButton({
+  const AppTextButton({
     super.key,
     required this.title,
     required this.onPressed,
@@ -26,9 +26,9 @@ class AppButton extends StatelessWidget {
         width: size.width * 0.5,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: ElevatedButton(
+          child: TextButton(
             onPressed: onPressed,
-            style: ElevatedButton.styleFrom(
+            style: TextButton.styleFrom(
               backgroundColor: color ?? AppColors.goldPrimary,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(

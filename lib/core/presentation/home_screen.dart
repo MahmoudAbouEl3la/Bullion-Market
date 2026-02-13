@@ -2,7 +2,7 @@ import 'package:bullion_market/core/constants/app_colors.dart';
 import 'package:bullion_market/core/constants/app_strings.dart';
 import 'package:bullion_market/core/navigation/navigation_extension.dart';
 import 'package:bullion_market/core/routing/routes.dart';
-import 'package:bullion_market/core/widgets/app_button.dart';
+import 'package:bullion_market/core/widgets/app_text_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -14,13 +14,13 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          AppButton(
+          AppTextButton(
             title: AppStrings.gold,
             onPressed: () {
-              context.pushTo(Routes.goldenScreen);
+              context.pushTo(Routes.goldScreen);
             },
           ),
-          AppButton(
+          AppTextButton(
             title: AppStrings.silver,
             onPressed: () {
               context.pushTo(Routes.silverScreen);

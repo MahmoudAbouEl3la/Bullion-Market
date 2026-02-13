@@ -1,9 +1,13 @@
+import 'package:bullion_market/core/constants/app_strings.dart';
+import 'package:bullion_market/core/di/service_locator.dart';
 import 'package:bullion_market/core/routing/app_routing.dart';
 import 'package:bullion_market/core/routing/routes.dart';
 import 'package:bullion_market/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  ServiceLocator.init();
   runApp(const MyApp());
 }
 
@@ -13,7 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Bullion Market',
+      title: AppStrings.appName,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: AppColors.appBackground,
